@@ -1,0 +1,2 @@
+# JavaCore
+Homeworks for JavaCore
