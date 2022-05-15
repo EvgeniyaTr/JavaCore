@@ -19,13 +19,14 @@ public class main {
         } catch (MyArraySizeException eSize)
          {
             System.out.println("Размер массива не соответствует 4х4");
-        }
+        } catch (MyArrayDataException eData)
+        {eData.printStackTrace();}
 
 
     }
 
 //метод, подающий на вход двумерный строковый массив заданной размерности
-    public static void newArray(int width, int height) throws MyArraySizeException {
+    public static void newArray(int width, int height) throws MyArraySizeException, MyArrayDataException {
         if (width != 4) {
             throw new MyArraySizeException();
         }
@@ -51,8 +52,8 @@ public class main {
                     try {
                         int arrInt = Integer.parseInt(array[i][j]);
                         sum += arrInt;
-                    } catch (NumberFormatException eData){
-                        System.out.println("Данные в ячейке [" + i + "],[" + j + "] не могут быть преобразованы в int");
+                    } catch (NumberFormatException eData) {
+                        throw new MyArrayDataException(i, j);
                     }
                 }
             }

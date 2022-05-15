@@ -1,5 +1,5 @@
 package lesson2.homework;
 
-public class MyArraySizeException extends IndexOutOfBoundsException{
+public class MyArraySizeException extends Exception{
 
 }
